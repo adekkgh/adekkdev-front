@@ -19,3 +19,5 @@ RUN npm run build
 
 # Открываем порт 3000
 EXPOSE 3000
+
+CMD ["npx", "vite", "--host", "--port", "3000"]
