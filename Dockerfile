@@ -10,6 +10,7 @@ COPY svelte.config.js tsconfig.json vite.config.ts ./
 
 # Устанавливаем зависимости
 RUN npm install
+ENV PATH="./node_modules/.bin:$PATH"
 
 # Копируем остальные файлы проекта
 COPY . .
@@ -20,4 +21,4 @@ RUN npm run build
 # Открываем порт 3000
 EXPOSE 3000
 
-CMD ["npx", "vite", "--host", "--port", "3000"]
+CMD ["vite", "--host", "--port", "3000"]
