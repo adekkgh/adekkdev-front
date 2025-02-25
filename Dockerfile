@@ -20,4 +20,4 @@ RUN npm run build
 EXPOSE 3000
 
 # Запускаем сервер разработки (для dev) или продакшн сервер
-CMD ["npm", "run", "dev", "--", "--host"]
+CMD ["npm", "run", "dev", "--", "--host", "--port", "3000"]
