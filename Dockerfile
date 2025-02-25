@@ -4,8 +4,9 @@ FROM node:18
 # Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Копируем package.json и package-lock.json
+# Копируем package.json и package-lock.json и конфигурационные файлы
 COPY package*.json ./
+COPY svelte.config.js tsconfig.json vite.config.ts ./
 
 # Устанавливаем зависимости
 RUN npm install
