@@ -40,8 +40,10 @@ declare module '$env/static/private' {
 	export const DEBUG_COLORS: string;
 	export const DEVECOSTUDIO_VM_OPTIONS: string;
 	export const DriverData: string;
-	export const EFC_21808: string;
+	export const EFC_45640: string;
 	export const FORCE_COLOR: string;
+	export const FPS_BROWSER_APP_PROFILE_STRING: string;
+	export const FPS_BROWSER_USER_PROFILE_STRING: string;
 	export const GATEWAY_VM_OPTIONS: string;
 	export const GOLAND_VM_OPTIONS: string;
 	export const HOMEDRIVE: string;
@@ -137,8 +139,10 @@ declare module '$env/dynamic/private' {
 		DEBUG_COLORS: string;
 		DEVECOSTUDIO_VM_OPTIONS: string;
 		DriverData: string;
-		EFC_21808: string;
+		EFC_45640: string;
 		FORCE_COLOR: string;
+		FPS_BROWSER_APP_PROFILE_STRING: string;
+		FPS_BROWSER_USER_PROFILE_STRING: string;
 		GATEWAY_VM_OPTIONS: string;
 		GOLAND_VM_OPTIONS: string;
 		HOMEDRIVE: string;
