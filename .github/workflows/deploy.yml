@@ -22,8 +22,11 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no root@77.232.136.158 << 'EOF'
             cd /root/projects/adekkdev-front
+            git reset --hard
+            git clean -fd
             git pull origin main
-            docker-compose down
+            npm install
             docker-compose run --rm frontend npm install
+            docker-compose down
             docker-compose up --build -d
           EOF
