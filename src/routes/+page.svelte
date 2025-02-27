@@ -1,3 +1,2 @@
-<h1>ГО В ВВЗ?</h1>
-<h4>сосали?</h4>
-<h6>да шучу я да ну</h6>
+<h1 style="text-align: center">adekkdev</h1>
+<h4 style="text-align: center">work in progress</h4>
