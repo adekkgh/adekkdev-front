@@ -1,6 +1,6 @@
 <div class="container temp-div">
-    <h1 style="text-align: center">adekkdev</h1>
-    <h4 style="text-align: center">work in progress</h4>
+    <h1 style="text-align: center; letter-spacing: 1px">adekkdev</h1>
+    <h4 style="text-align: center; letter-spacing: 1px">work in progress</h4>
 </div>
 
 <style lang="scss">
