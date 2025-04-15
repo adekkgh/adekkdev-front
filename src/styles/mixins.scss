@@ -1,0 +1,12 @@
+// media expression mixin
+@mixin mx($from, $to: false) {
+  @if $to {
+    @media (max-width: ($from + 0px)) and (min-width: ($to + 0px)) {
+      @content;
+    }
+  } @else {
+    @media (max-width: ($from + 0px)) {
+      @content;
+    }
+  }
+}
