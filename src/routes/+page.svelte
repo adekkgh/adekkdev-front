@@ -36,7 +36,7 @@
         scene.add(keyLight);
 
         const loader = new GLTFLoader();
-        loader.load('/models/king-bob.glb', (gltf) => {
+        loader.load('/models/new-king-bob.glb', (gltf) => {
             model = gltf.scene;
             model.scale.set(0.2, 0.2, 0.2);
             model.position.y = -0.8;
