@@ -31,7 +31,7 @@
                         }
                     }
                 },
-                payUrl: 'https://pay.dev.simbasoft.com/?token=EWBV0sJIKW8'
+                payUrl: 'https://pay.dev.simbasoft.com/?token=EWBWkWCaxG8'
             });
         };
 
