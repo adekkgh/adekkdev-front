@@ -1,8 +1,12 @@
 <script>
     import { onMount } from 'svelte';
 
-    onMount(async () => {
-        // Динамически загружаем скрипт
+    let showPayform = false;
+    let payformURL = '';
+
+    async function handleButtonClick() {
+        showPayform = !showPayform;
+
         const script = document.createElement('script');
         script.src = 'https://pay.dev.simbasoft.com/widget/payform.js';
         script.charset = 'utf-8';
@@ -13,38 +17,49 @@
             window.PSP.Widget.init({
                 display: {
                     mode: "modal",
-                    options: {
-                        container: "mywidget",
-                        pcidss: "full",
-                    },
                     theme: {
-                        name: "dark",
-                        colors: {
-                            bg: "#4a5b5b",
-                            primary: "#313337",
-                            secondary: "#009D8C",
-                            info: "#fff",
-                            label: "#fff",
-                            danger: "#FF592C",
-                            success: "#17BD98",
-                            inactive: "#fff"
-                        }
+                        name: "default",
                     }
                 },
-                payUrl: 'https://pay.dev.simbasoft.com/?token=EWBc_VMes28'
+                payUrl: payformURL,
             });
         };
 
         document.head.appendChild(script);
-
-        // Очистка при размонтировании компонента
-        return () => {
-            if (document.getElementById('psp-widget-loader')) {
-                document.head.removeChild(script);
-            }
-        };
-    });
+    }
 </script>
 
 <!-- Контейнер для виджета -->
 <div id="mywidget"></div>
+
+{#if showPayform}
+    <div id="mywidget"></div>
+{:else}
+    <div class="testik">
+        <input type="text" placeholder="payform URL" bind:value={payformURL}>
+        <button
+            on:click={async () => await handleButtonClick()}
+        >
+            Open payform
+        </button>
+    </div>
+{/if}
+
+<style lang="scss">
+    .testik {
+      width: max-content;
+      margin: 200px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+
+      & input {
+        width: 400px;
+      }
+
+      & button {
+        width: 150px;
+      }
+    }
+</style>
