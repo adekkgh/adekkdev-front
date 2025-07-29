@@ -17,7 +17,7 @@
                     label: 'Тестовая покупка',
                     amount: '1.00',
                 },
-                merchantIdentifier: 'adekkdev.ru.fake-mst',
+                merchantIdentifier: 'adekkdevtesttest.ru.fake-mst',
             };
 
             const session = new ApplePaySession(3, request);
