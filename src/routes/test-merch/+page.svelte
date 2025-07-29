@@ -25,7 +25,32 @@
             session.onvalidatemerchant = (event) => {
                 console.log('✅ Вызван onvalidatemerchant');
                 result = '✅ Домен зарегистрирован, сессия инициирована!';
-                session.abort();
+            };
+
+            session.onpaymentmethodselected = async event => {
+
+                session.completePaymentMethodSelection({});
+
+            }
+
+            session.onpaymentauthorized = async event => {
+
+                let responseStatus;
+
+                try {
+                    responseStatus = await onPaymentComplete(event.payment);
+                } catch (error) {
+                    responseStatus = -1;
+                }
+
+                let result;
+                if (responseStatus === 2) {
+                    result = { "status": ApplePaySession.STATUS_SUCCESS };
+                } else {
+                    result = { "status": ApplePaySession.STATUS_FAILURE };
+                }
+
+                session.completePayment(result);
             };
 
             session.onerror = (err) => {
