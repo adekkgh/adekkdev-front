@@ -38,8 +38,8 @@
         const loader = new GLTFLoader();
         loader.load('/models/new-king-bob.glb', (gltf) => {
             model = gltf.scene;
-            model.scale.set(0.2, 0.2, 0.2);
-            model.position.y = -0.8;
+            model.scale.set(0.1, 0.1, 0.1);
+            model.position.y = -0.75;
             scene.add(model);
 
             const leftPupil = model.getObjectByName('Eyes_L');
@@ -117,9 +117,19 @@
     });
 </script>
 
+<div class="temp">
+    <h1>testik</h1>
+</div>
+
 <canvas bind:this={canvas} />
 
 <style>
+    .temp {
+        color: #d4af37;
+        background-color: #f5f5f5;
+        width: max-content;
+    }
+
     canvas {
         width: 100%;
         height: 100%;
