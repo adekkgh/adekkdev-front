@@ -118,7 +118,7 @@
 </script>
 
 <div class="temp">
-    <h1>testik hello 1234</h1>
+    <h1>testik hello</h1>
 </div>
 
 <canvas bind:this={canvas} />
